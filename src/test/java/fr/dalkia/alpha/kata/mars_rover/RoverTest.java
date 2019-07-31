@@ -1,15 +1,17 @@
 package fr.dalkia.alpha.kata.mars_rover;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(JUnitParamsRunner.class)
 public class RoverTest {
+    Rover rover = new Rover();
 
     @Test
     public void shouldBeAtZeroZero() {
-        //Given
-        Rover rover = new Rover();
-
         //When
         String statut = rover.execute("");
 
@@ -19,9 +21,6 @@ public class RoverTest {
 
     @Test
     public void shouldMove() {
-        //Given
-        Rover rover = new Rover();
-
         //When
         String statut = rover.execute("M");
 
@@ -31,9 +30,6 @@ public class RoverTest {
 
     @Test
     public void shouldMoveTwice() {
-        //Given
-        Rover rover = new Rover();
-
         //When
         String statut = rover.execute("MM");
 
@@ -41,22 +37,24 @@ public class RoverTest {
         Assert.assertEquals("0:2:N", statut);
     }
 
+    @Parameters({
+            "R, 0:0:E",
+            "RR, 0:0:S",
+            "RRR, 0:0:W",
+            "RRRR, 0:0:N"
+            })
     @Test
-    public void should_turn_right_and_be_east_oriented() {
-        //Given
-        Rover rover = new Rover();
+    public void turnRight(String commands, String position) {
 
         //When
-        String statut = rover.execute("R");
+        String statut = rover.execute(commands);
 
         //Then
-        Assert.assertEquals("0:0:E", statut);
+        Assert.assertEquals(position, statut);
     }
 
     @Test
     public void should_turn_right_move_and_be_east_oriented() {
-        //Given
-        Rover rover = new Rover();
 
         //When
         String statut = rover.execute("RM");
@@ -65,10 +63,22 @@ public class RoverTest {
         Assert.assertEquals("1:0:E", statut);
     }
 
+    @Parameters({
+            "L, 0:0:W",
+            "LL, 0:0:S",
+    })
     @Test
-    public void should_turn_left_and_be_west_oriented() {
-        //Given
-        Rover rover = new Rover();
+    public void turnLeft(String commands, String position) {
+
+        //When
+        String statut = rover.execute(commands);
+
+        //Then
+        Assert.assertEquals(position, statut);
+    }
+
+    @Test
+    public void should_turn_left_x2_be_north_oriented() {
 
         //When
         String statut = rover.execute("L");
