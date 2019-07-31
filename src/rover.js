@@ -9,7 +9,11 @@ function rover(instructions) {
                 rotateLeft();
                 break;
             case 'R':
-                coordinate.direction = 'E';
+                if (coordinate.direction === 'E') {
+                    coordinate.direction = 'S';
+                } else {
+                    coordinate.direction = 'E';
+                }
                 break;
             default:
                 break;
