@@ -17,7 +17,11 @@ public class Rover {
                 }
             } else {
 
-                orientation = "E";
+                if (aChar == 'R') {
+                    orientation = "E";
+                } else if (aChar == 'L') {
+                    orientation = "W";
+                }
             }
         }
         return x + ":" + y + ":" + orientation;
