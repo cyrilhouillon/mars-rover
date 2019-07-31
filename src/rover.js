@@ -9,19 +9,28 @@ function rover(instructions) {
                 rotateLeft();
                 break;
             case 'R':
-                if (coordinate.direction === 'E') {
-                    coordinate.direction = 'S';
-                } else if (coordinate.direction === 'S') {
-                    coordinate.direction = 'W';
-                } else {
-                    coordinate.direction = 'E';
-                }
+                rotateRight();
                 break;
             default:
                 break;
         }
     }
     return coordinate.x + ':' + coordinate.y + ':' + coordinate.direction;
+
+    function rotateRight() {
+        if (coordinate.direction === 'E') {
+            coordinate.direction = 'S';
+        }
+        else if (coordinate.direction === 'S') {
+            coordinate.direction = 'W';
+        }
+        else if (coordinate.direction === 'W') {
+            coordinate.direction = 'N';
+        }
+        else {
+            coordinate.direction = 'E';
+        }
+    }
 
     function rotateLeft() {
         if (coordinate.direction === 'W') {
@@ -37,4 +46,5 @@ function rover(instructions) {
             coordinate.direction = 'W';
         }
     }
+
 }
