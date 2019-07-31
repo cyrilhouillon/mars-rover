@@ -11,6 +11,8 @@ function rover(instructions) {
             case 'R':
                 if (coordinate.direction === 'E') {
                     coordinate.direction = 'S';
+                } else if (coordinate.direction === 'S') {
+                    coordinate.direction = 'W';
                 } else {
                     coordinate.direction = 'E';
                 }
