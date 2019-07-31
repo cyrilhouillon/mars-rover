@@ -72,4 +72,9 @@ describe("Arithmetic tests", function () {
     expect(rover("M", 100, 0, "E")).toEqual("-100:0:E");
   });
 
+   // définition d'un test
+   it("should go to west pole", function () {
+    expect(rover("M", -100, 0, "W")).toEqual("100:0:W");
+  });
+
 });

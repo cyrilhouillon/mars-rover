@@ -27,6 +27,8 @@ function rover(instructions, initialX, initialY, initialDirection) {
             coordinate.y = MAX_Y;
         } else if (coordinate.x === MAX_X) {
             coordinate.x = -MAX_X;
+        } else if (coordinate.x === -MAX_X) {
+            coordinate.x = MAX_X;
         } else if (coordinate.direction === 'W') {
             coordinate.x = coordinate.x - 1;
         }
