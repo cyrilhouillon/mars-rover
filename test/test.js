@@ -52,4 +52,9 @@ describe("Arithmetic tests", function () {
     expect(rover("RRM")).toEqual("0:-1:S");
   });
 
+  // définition d'un test
+  it("should execute test acceptance", function () {
+    expect(rover("MMRMM")).toEqual("2:2:E");
+  });
+
 });
