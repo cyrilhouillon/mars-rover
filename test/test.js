@@ -32,6 +32,7 @@ describe("Arithmetic tests", function() {
 
     // définition d'un test
     it("should rotate multiple time to left", function() {
+      expect(rover("LL")).toEqual("0:0:S");
       expect(rover("LLL")).toEqual("0:0:E");
     });
 });
