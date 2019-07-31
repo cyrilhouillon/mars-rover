@@ -1,6 +1,6 @@
 function rover(instructions) {
     var coordinate = { x: 0, y: 0, direction: 'N' };
-    /* for (let index = 0; index < instructions.length; index++) {
+    for (var index = 0; index < instructions.length; index++) {
         const element = instructions[index];
         console.log(element);
         
@@ -19,7 +19,7 @@ function rover(instructions) {
                 break;
         }
 
-    }  */
+    } 
     return coordinate.x + ':' + coordinate.y + ':' + coordinate.direction;
 }
 
