@@ -5,6 +5,8 @@ function rover(instructions) {
             case 'M':
                 if (coordinate.direction === 'W') { 
                     coordinate.x = coordinate.x - 1;
+                } else if (coordinate.direction === 'E') { 
+                    coordinate.x = coordinate.x + 1;
                 } else {
                     coordinate.y = coordinate.y + 1;
                 }

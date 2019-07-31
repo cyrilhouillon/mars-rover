@@ -40,4 +40,10 @@ describe("Arithmetic tests", function () {
   it("should move to west", function () {
     expect(rover("LM")).toEqual("-1:0:W");
   });
+
+    // définition d'un test
+    it("should move to east", function () {
+      expect(rover("RM")).toEqual("1:0:E");
+    });
+
 });
