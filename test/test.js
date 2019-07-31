@@ -34,5 +34,7 @@ describe("Arithmetic tests", function() {
     it("should rotate multiple time to left", function() {
       expect(rover("LL")).toEqual("0:0:S");
       expect(rover("LLL")).toEqual("0:0:E");
+      expect(rover("LLLL")).toEqual("0:0:N");
+
     });
 });

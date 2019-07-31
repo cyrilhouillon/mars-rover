@@ -6,13 +6,7 @@ function rover(instructions) {
                 coordinate.y = coordinate.y + 1;
                 break;
             case 'L':
-                if (instructions.length === 2) {
-                    coordinate.direction = 'S';
-                } else if (instructions.length === 3) {
-                    coordinate.direction = 'E';
-                } else {
-                    coordinate.direction = 'W';
-                }
+                rotateLeft();
                 break;
             case 'R':
                 coordinate.direction = 'E';
@@ -22,4 +16,19 @@ function rover(instructions) {
         }
     }
     return coordinate.x + ':' + coordinate.y + ':' + coordinate.direction;
+
+    function rotateLeft() {
+        if (coordinate.direction === 'W') {
+            coordinate.direction = 'S';
+        }
+        else if (coordinate.direction === 'S') {
+            coordinate.direction = 'E';
+        }
+        else if (coordinate.direction === 'E') {
+            coordinate.direction = 'N';
+        }
+        else {
+            coordinate.direction = 'W';
+        }
+    }
 }
