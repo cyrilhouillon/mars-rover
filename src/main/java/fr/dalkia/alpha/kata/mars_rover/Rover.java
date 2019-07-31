@@ -9,11 +9,17 @@ public class Rover {
     public String execute(String s) {
         for (char aChar : s.toCharArray()) {
             if (aChar == 'M') {
-                y += 1;
+                if (orientation.equals("N") || orientation.equals("S")) {
+                    y += 1;
+                }
+                if (orientation.equals("E") || orientation.equals("W")) {
+                    x += 1;
+                }
             } else {
+
                 orientation = "E";
             }
         }
-        return "0:" + y + ":" + orientation;
+        return x + ":" + y + ":" + orientation;
     }
 }

@@ -52,4 +52,16 @@ public class RoverTest {
         //Then
         Assert.assertEquals("0:0:E", statut);
     }
+
+    @Test
+    public void should_turn_right_move_and_be_east_oriented() {
+        //Given
+        Rover rover = new Rover();
+
+        //When
+        String statut = rover.execute("RM");
+
+        //Then
+        Assert.assertEquals("1:0:E", statut);
+    }
 }
