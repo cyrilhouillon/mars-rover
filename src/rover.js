@@ -1,9 +1,17 @@
 function rover(instructions) {
-    coordinate = {x: 0, y:0, direction:'N'};
-    if (instructions === 'M') {
-        coordinate.y = coordinate.y + 1;
-    } else if(instructions === 'L'){
-        coordinate.direction = 'W';
+    coordinate = { x: 0, y: 0, direction: 'N' };
+    switch (instructions) {
+        case 'M':
+            coordinate.y = coordinate.y + 1;
+            break;
+        case 'L':
+            coordinate.direction = 'W';
+            break;
+        case 'R':
+            coordinate.direction = 'E';
+            break;
+        default:
+            break;
     }
     return coordinate.x + ':' + coordinate.y + ':' + coordinate.direction;
 }
