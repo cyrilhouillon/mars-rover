@@ -3,7 +3,11 @@ function rover(instructions) {
     for (var index = 0; index < instructions.length; index++) {
         switch (instructions[index]) {
             case 'M':
-                coordinate.y = coordinate.y + 1;
+                if (coordinate.direction === 'W') { 
+                    coordinate.x = coordinate.x - 1;
+                } else {
+                    coordinate.y = coordinate.y + 1;
+                }
                 break;
             case 'L':
                 rotateLeft();

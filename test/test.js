@@ -35,4 +35,9 @@ describe("Arithmetic tests", function () {
     expect(rover("RRR")).toEqual("0:0:W");
     expect(rover("RRRR")).toEqual("0:0:N");
   });
+
+  // définition d'un test
+  it("should move to west", function () {
+    expect(rover("LM")).toEqual("-1:0:W");
+  });
 });
