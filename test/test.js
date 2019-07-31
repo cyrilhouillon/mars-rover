@@ -29,4 +29,9 @@ describe("Arithmetic tests", function() {
     it("should move forward multiple time", function() {
       expect(rover("MMM")).toEqual("0:3:N");
     });
+
+    // définition d'un test
+    it("should rotate multiple time to left", function() {
+      expect(rover("LLL")).toEqual("0:0:E");
+    });
 });

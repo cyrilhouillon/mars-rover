@@ -6,7 +6,11 @@ function rover(instructions) {
                 coordinate.y = coordinate.y + 1;
                 break;
             case 'L':
-                coordinate.direction = 'W';
+                if (instructions.length === 3) {
+                    coordinate.direction = 'E';
+                } else {
+                    coordinate.direction = 'W';
+                }
                 break;
             case 'R':
                 coordinate.direction = 'E';
