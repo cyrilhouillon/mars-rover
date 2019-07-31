@@ -87,7 +87,23 @@ public class Rover {
 
     public String execute(String commands) {
 
-        return null;
+        for (char c : commands.toCharArray()) {
+            switch (c) {
+                case 'M':
+                    move();
+                    break;
+                case 'L':
+                    turnLeft();
+                    break;
+                case 'R':
+                    turnRight();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return x + ":" + y + ":" + orientation;
     }
 
     public void move() {
