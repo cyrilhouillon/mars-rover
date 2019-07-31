@@ -3,15 +3,7 @@ function rover(instructions, initialX, initialY, initialDirection) {
     for (var index = 0; index < instructions.length; index++) {
         switch (instructions[index]) {
             case 'M':
-                if (coordinate.direction === 'W') { 
-                    coordinate.x = coordinate.x - 1;
-                } else if (coordinate.direction === 'E') { 
-                    coordinate.x = coordinate.x + 1;
-                } else if (coordinate.direction === 'S') { 
-                    coordinate.y = coordinate.y - 1;
-                } else {
-                    coordinate.y = coordinate.y + 1;
-                }
+                moveForward();
                 break;
             case 'L':
                 rotateLeft();
@@ -24,6 +16,26 @@ function rover(instructions, initialX, initialY, initialDirection) {
         }
     }
     return coordinate.x + ':' + coordinate.y + ':' + coordinate.direction;
+
+    function moveForward() {
+        const MAX_Y = 100;
+
+        if (coordinate.direction === 'W') {
+            coordinate.x = coordinate.x - 1;
+        }
+        else if (coordinate.direction === 'E') {
+            coordinate.x = coordinate.x + 1;
+        }
+        else if (coordinate.direction === 'S') {
+            coordinate.y = coordinate.y - 1;
+        }
+        else if (coordinate.y === MAX_Y) {
+            coordinate.y = -MAX_Y;
+        }
+        else {
+            coordinate.y = coordinate.y + 1;
+        }
+    }
 
     function rotateRight() {
         if (coordinate.direction === 'E') {

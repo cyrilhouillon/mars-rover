@@ -57,4 +57,9 @@ describe("Arithmetic tests", function () {
     expect(rover("MMRMM", 0, 0, "N")).toEqual("2:2:E");
   });
 
+  // définition d'un test
+  it("should go to north pole", function () {
+    expect(rover("M", 0, 100, "N")).toEqual("0:-100:N");
+  });
+
 });
