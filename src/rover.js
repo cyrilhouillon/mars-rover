@@ -20,7 +20,12 @@ function rover(instructions, initialX, initialY, initialDirection) {
     function moveForward() {
         const MAX_Y = 100;
 
-        if (coordinate.direction === 'W') {
+        if (coordinate.y === MAX_Y) {
+            coordinate.y = -MAX_Y;
+        } else if (coordinate.y === -MAX_Y) {
+            coordinate.y = MAX_Y;
+        }
+        else if (coordinate.direction === 'W') {
             coordinate.x = coordinate.x - 1;
         }
         else if (coordinate.direction === 'E') {
@@ -28,9 +33,6 @@ function rover(instructions, initialX, initialY, initialDirection) {
         }
         else if (coordinate.direction === 'S') {
             coordinate.y = coordinate.y - 1;
-        }
-        else if (coordinate.y === MAX_Y) {
-            coordinate.y = -MAX_Y;
         }
         else {
             coordinate.y = coordinate.y + 1;
