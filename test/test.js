@@ -7,54 +7,54 @@ describe("Arithmetic tests", function () {
 
   // définition d'un test
   it("should init rover position", function () {
-    expect(rover("")).toEqual("0:0:N");
+    expect(rover("", 0, 0, "N")).toEqual("0:0:N");
   });
 
   // définition d'un test
   it("should move forward from initial position", function () {
-    expect(rover("M")).toEqual("0:1:N");
+    expect(rover("M", 0, 0, "N")).toEqual("0:1:N");
   });
 
   // définition d'un test
   it("should move forward multiple time", function () {
-    expect(rover("MMM")).toEqual("0:3:N");
+    expect(rover("MMM", 0, 0, "N")).toEqual("0:3:N");
   });
 
   // définition d'un test
   it("should rotate to left", function () {
-    expect(rover("L")).toEqual("0:0:W");
-    expect(rover("LL")).toEqual("0:0:S");
-    expect(rover("LLL")).toEqual("0:0:E");
-    expect(rover("LLLL")).toEqual("0:0:N");
+    expect(rover("L", 0, 0, "N")).toEqual("0:0:W");
+    expect(rover("LL", 0, 0, "N")).toEqual("0:0:S");
+    expect(rover("LLL", 0, 0, "N")).toEqual("0:0:E");
+    expect(rover("LLLL", 0, 0, "N")).toEqual("0:0:N");
   });
 
   // définition d'un test
   it("should rotate to right", function () {
-    expect(rover("R")).toEqual("0:0:E");
-    expect(rover("RR")).toEqual("0:0:S");
-    expect(rover("RRR")).toEqual("0:0:W");
-    expect(rover("RRRR")).toEqual("0:0:N");
+    expect(rover("R", 0, 0, "N")).toEqual("0:0:E");
+    expect(rover("RR", 0, 0, "N")).toEqual("0:0:S");
+    expect(rover("RRR", 0, 0, "N")).toEqual("0:0:W");
+    expect(rover("RRRR", 0, 0, "N")).toEqual("0:0:N");
   });
 
   // définition d'un test
   it("should move to west", function () {
-    expect(rover("LM")).toEqual("-1:0:W");
+    expect(rover("LM", 0, 0, "N")).toEqual("-1:0:W");
   });
 
   // définition d'un test
   it("should move to east", function () {
-    expect(rover("RM")).toEqual("1:0:E");
+    expect(rover("RM", 0, 0, "N")).toEqual("1:0:E");
   });
 
   // définition d'un test
   it("should move to south", function () {
-    expect(rover("LLM")).toEqual("0:-1:S");
-    expect(rover("RRM")).toEqual("0:-1:S");
+    expect(rover("LLM", 0, 0, "N")).toEqual("0:-1:S");
+    expect(rover("RRM", 0, 0, "N")).toEqual("0:-1:S");
   });
 
   // définition d'un test
   it("should execute test acceptance", function () {
-    expect(rover("MMRMM")).toEqual("2:2:E");
+    expect(rover("MMRMM", 0, 0, "N")).toEqual("2:2:E");
   });
 
 });

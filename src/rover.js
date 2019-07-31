@@ -1,5 +1,5 @@
-function rover(instructions) {
-    coordinate = { x: 0, y: 0, direction: 'N' };
+function rover(instructions, initialX, initialY, initialDirection) {
+    coordinate = { x: initialX, y: initialY, direction: initialDirection };
     for (var index = 0; index < instructions.length; index++) {
         switch (instructions[index]) {
             case 'M':
