@@ -41,9 +41,15 @@ describe("Arithmetic tests", function () {
     expect(rover("LM")).toEqual("-1:0:W");
   });
 
-    // définition d'un test
-    it("should move to east", function () {
-      expect(rover("RM")).toEqual("1:0:E");
-    });
+  // définition d'un test
+  it("should move to east", function () {
+    expect(rover("RM")).toEqual("1:0:E");
+  });
+
+  // définition d'un test
+  it("should move to south", function () {
+    expect(rover("LLM")).toEqual("0:-1:S");
+    expect(rover("RRM")).toEqual("0:-1:S");
+  });
 
 });
