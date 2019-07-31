@@ -9,4 +9,9 @@ describe("Arithmetic tests", function() {
   it("should init rover position", function() {
     expect(rover("")).toEqual("0:0:N");
   });
+
+  // définition d'un test
+  it("should move forward from initial position", function() {
+    expect(rover("M")).toEqual("0:1:N");
+  });
 });
