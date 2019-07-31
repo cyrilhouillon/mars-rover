@@ -15,4 +15,9 @@ describe("Mars Rover tests", function() {
   it("should move to north", function() {
     expect(rover("M")).toEqual("0:1:N");
   });
+
+  // définition d'un test
+  it("should rotate to left", function() {
+    expect(rover("L")).toEqual("0:0:W");
+  });
 });

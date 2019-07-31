@@ -6,7 +6,7 @@ function rover(instructions) {
         
         switch (element) {
             case 'L':
-            
+            coordinate.direction = "W";
             break;
 
             case 'R':
